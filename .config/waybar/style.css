@@ -68,3 +68,14 @@ tooltip label {
     font-family: "JetBrainsMono Nerd Font", "Terminus", monospace;
     padding: 5px;
 }
+
+calendar {
+    padding: 10px;
+    background-color: #000000;
+    color: #ff0055;
+}
+
+calendar:selected {
+    background-color: #ff0055;
+    color: #000000;
+}
