@@ -1,0 +1,24 @@
+menu,
+.menu,
+.context-menu {
+    background-color: #000000;
+    border: 2px solid #ff0055;
+    border-radius: 0px;
+    padding: 5px;
+    color: #ff0055;
+}
+
+menuitem {
+    background-color: transparent;
+    color: #ff0055;
+    padding: 4px 10px;
+}
+
+menuitem:hover {
+    background-color: #ff0055;
+    color: #000000;
+}
+
+menu, .menu {
+    box-shadow: none;
+}
