@@ -4,10 +4,17 @@
     "height": 12,
     "spacing": 0,
     
-    "modules-left": ["hyprland/workspaces"],
+    "modules-left": ["custom/launcher", "hyprland/workspaces"],
     "modules-center": ["clock", "custom/updates"],
     "modules-right": ["tray", "hyprland/language"],
-
+    
+    "custom/launcher": {
+    "format": "󰣇 ", // You can use any icon here (e.g., an Arch logo or a search icon)
+    "on-click": "wofi --show drun -I", // Launches wofi in desktop runner mode
+    "on-click-right": "wofi --show run", // Optional: Right-click for command runner
+    "tooltip": false
+	},
+	
     "hyprland/workspaces": {
         "format": "{icon}",
         "format-icons": {
@@ -21,7 +28,7 @@
     },
 
     "clock": {
-    "format": "{:%d/%m/%Y   %H:%M}",
+    "format": "{:%d/%m/%Y %H:%M}",
     "tooltip-format": "<tt><span font='JetBrainsMono Nerd Font'>{calendar}</span></tt>",
     "on-click": "gnome-calendar",
     "calendar": {
