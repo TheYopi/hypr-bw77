@@ -5,7 +5,7 @@
     "spacing": 0,
     
     "modules-left": ["hyprland/workspaces"],
-    "modules-center": ["clock"],
+    "modules-center": ["clock", "custom/updates"],
     "modules-right": ["tray", "hyprland/language"],
 
     "hyprland/workspaces": {
@@ -24,6 +24,15 @@
         "format": "{:%d/%m/%Y  %H:%M}",
         "tooltip-format": "<tt><small>{calendar}</small></tt>"
     },
+    
+    "custom/updates": {
+	    "format": "󱍷 ",
+	    "return-type": "json",
+	    "exec": "~/.config/waybar/scripts/check_updates.sh",
+	    "interval": 3600,
+	    "on-click": "ghostty -e bash -c 'sudo pacman -Syu && yay -Syu && flatpak update -y; echo Done - Press any key to close; read -n1'",
+	    "tooltip": true
+},
 
     "tray": {
         "icon-size": 16,
