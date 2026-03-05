@@ -55,3 +55,16 @@ window#waybar {
 #tray > .needs-attention {
     -gtk-icon-effect: highlight;
 }
+
+tooltip {
+    background: #000000;
+    color: #ff0055;
+    border: 2px solid #ff0055;
+    border-radius: 0px;
+}
+
+tooltip label {
+    color: #ff0055;
+    font-family: "JetBrainsMono Nerd Font", "Terminus", monospace;
+    padding: 5px;
+}
