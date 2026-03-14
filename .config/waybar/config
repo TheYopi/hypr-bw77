@@ -1,66 +1,85 @@
 {
-    "layer": "top",
-    "position": "top",
-    "height": 12,
-    "spacing": 0,
-    
-    "modules-left": ["custom/launcher", "hyprland/workspaces"],
-    "modules-center": ["clock", "custom/updates"],
-    "modules-right": ["tray", "hyprland/language"],
-    
-    "custom/launcher": {
-    "format": "󰣇 ", // You can use any icon here (e.g., an Arch logo or a search icon)
-    "on-click": "wofi --show drun -I", // Launches wofi in desktop runner mode
-    "on-click-right": "wofi --show run", // Optional: Right-click for command runner
-    "tooltip": false
-	},
-	
-    "hyprland/workspaces": {
-        "format": "{icon}",
-        "format-icons": {
-            "active": "■",
-            "default": "•"
-        },
-        "persistent-workspaces": {
-            "DP-1": [1, 2, 3, 4, 5],
+  "layer": "top",
+  "position": "top",
+  "height": 12,
+  "spacing": 0,
+
+
+  "modules-left": ["custom/launcher", "hyprland/workspaces"],
+  "modules-center": ["clock", "custom/updates"],
+  "modules-right": ["tray", "pulseaudio", "hyprland/language"],
+
+
+  "custom/launcher": {
+  "format": "󰣇 ",
+  "on-click": "wofi --show drun -I",
+  "on-click-right": "wofi --show run",
+  "tooltip": false
+  },
+
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "format-icons": {
+    "active": "■",
+    "default": "•"
+    },
+
+    "persistent-workspaces": {
+      "DP-1": [1, 2, 3, 4, 5],
 	    "HDMI-A-1": [6, 7, 8, 9, 10]
-        }
+      }
     },
 
-    "clock": {
-    "format": "{:%d/%m/%Y %H:%M}",
-    "tooltip-format": "<tt><span font='JetBrainsMono Nerd Font'>{calendar}</span></tt>",
-    "on-click": "gnome-calendar",
+  "clock": {
+  "format": "{:%d/%m/%Y %H:%M}",
+  "tooltip-format": "<tt><span font='JetBrainsMono Nerd Font'>{calendar}</span></tt>",
+  "on-click": "gnome-calendar",
     "calendar": {
-        "mode": "month",
-        "on-scroll": 1,
-        "format": {
-            "months":   "<span color='#ff0055'><b>{}</b></span>",
-            "days":     "<span color='#ff0055'><b>{}</b></span>",
-            "weekdays": "<span color='#ff0055'><b>{}</b></span>",
-            "today":    "<span color='#000000' background='#ff0055'><b>{}</b></span>"
-        }
+    "mode": "month",
+    "on-scroll": 1,
+    "format": {
+      "months":   "<span color='#ff0055'><b>{}</b></span>",
+      "days":     "<span color='#ff0055'><b>{}</b></span>",
+      "weekdays": "<span color='#ff0055'><b>{}</b></span>",
+      "today":    "<span color='#000000' background='#ff0055'><b>{}</b></span>"
+      }
     }
-},
-    
-    "custom/updates": {
-	    "format": "󱍷 ",
-	    "return-type": "json",
-	    "exec": "~/.config/waybar/scripts/check_updates.sh",
-	    "interval": 3600,
-	    "on-click": "ghostty -e bash -c 'sudo pacman -Syu && yay -Syu && flatpak update -y; echo Done - Press any key to close; read -n1'",
-	    "tooltip": true
-},
+  },
 
-    "tray": {
-        "icon-size": 16,
-        "spacing": 8
+"custom/updates": {
+  "format": "󱍷 ",
+	"return-type": "json",
+	"exec": "~/.config/waybar/scripts/check_updates.sh",
+	"interval": 3600,
+	"on-click": "ghostty -e bash -c 'sudo pacman -Syu && yay -Syu && flatpak update -y; echo Done - Press any key to close; read -n1'",
+	"tooltip": true
+  },
+
+"tray": {
+  "icon-size": 16,
+  "spacing": 8
+  },
+
+"pulseaudio" : {
+  "format": "{icon} {volume}%",
+  "format-bluetooth": "{icon} {volume}%",
+  "format-muted": " Muted",
+  "format-icons": {
+    "headphone": "",
+    "hands-free": "",
+    "headset": "",
+    "phone": "",
+    "portable": "",
+    "car": "",
+    "default": ["", "", ""]
     },
-    
-    "hyprland/language": {
-        "format": "{}",
-        "format-en": "EN",
-        "format-ru": "RU",
-        "on-click": "hyprctl switchxkblayout current next"
-    },
+    "on-click": "pavucontrol"
+  },
+
+"hyprland/language": {
+  "format": "{}",
+  "format-en": "EN",
+  "format-ru": "RU",
+  "on-click": "hyprctl switchxkblayout current next"
+  },
 }
