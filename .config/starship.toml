@@ -1,0 +1,26 @@
+$schema" = 'https://starship.rs/config-schema.json'
+
+format = """
+$os\
+$username\
+$directory\
+$character"""
+
+[os]
+disabled = false
+format = " 󰣇 "
+
+[username]
+show_always = true
+style_user = "fg:#ff0055"
+style_root = "bg:white fg:black"
+format = '[$user]($style)'
+
+[directory]
+style = "bg:peach fg:crust"
+format = "[ $path ]($style)"
+#truncation_length = 3
+#truncation_symbol = "…/"
+
+[character]
+success_symbol = '[ ▶](bold white)'
