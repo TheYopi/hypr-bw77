@@ -1,24 +1,30 @@
+add_newline = false
+
 format = """
-$os\
+[ 󰣇 ](bg:#ff0055 fg:#000000)\
 $username\
+[](fg:#ff0055 bg:#cc0044)\
 $directory\
-$character"""
+[](fg:#cc0044 bg:#000000)\
+\n $character
+"""
 
 [os]
+style = "bg:#ff0055"
 disabled = false
 format = " 󰣇 "
 
 [username]
 show_always = true
-style_user = "fg:#ff0055"
+style_user = "fg:#000000 bg:#ff0055"
 style_root = "bg:white fg:black"
 format = '[$user]($style)'
 
 [directory]
-style = "bg:peach fg:crust"
+style = "fg:#000000 bg:#cc0044"
 format = "[ $path ]($style)"
-#truncation_length = 3
-#truncation_symbol = "…/"
+truncation_length = 3
+truncation_symbol = "…/"
 
 [character]
-success_symbol = '[ ▶](bold white)'
+success_symbol = '[](bold fg:#ff0055)'
