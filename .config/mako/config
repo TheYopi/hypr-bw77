@@ -1,3 +1,5 @@
+on-notify=exec paplay --volume 32000  ~/Documents/mako-notifications/cyberpunk-message.mp3
+
 background-color=#ff0055
 text-color=#000000
 border-size=0
